@@ -8,9 +8,10 @@ on:
         description: Select the environment
         required: true  
 env:
-  namehs: ${{ vars.NAME_HS }}
-  uid: ${{ secrets.LOGIN_CRED }}
-  web: ${{ secrets.WEB_PACKAGE }}
+  namehs: ${{ vars.KENT }}
+  uid: ${{ secrets.HS }}
+ # web: ${{ secrets.HS_CM }}
+ # for: ${{ secreats.
 jobs:
   job:
     runs-on: ubuntu-latest
@@ -20,8 +21,8 @@ jobs:
       name: printing env message
     - run: |
         echo "from ${{ inputs.Deploy-to }} environment"
-        echo $NAME_HS
-        echo $LOGIN_CRED
-        echo $WEB_PACKAGE
+        echo $KENT
+        echo $HS
+      #  echo $HS_CM
 
     

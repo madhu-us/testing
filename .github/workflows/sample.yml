@@ -2,6 +2,9 @@ on:
   push:
      paths: 
        - 'my/testing/**'
+  pull_request:
+    types: [review_requested]
+     
   workflow_dispatch:
     inputs:
       logLevel:
@@ -11,7 +14,13 @@ on:
       tags:
         description: 'Test scenario tags'       
 jobs:
-   printInputs:
+   
+  specific_review_requested:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.requested_team.name == 'madhu-us''lalithag123' }}
+    steps:
+      - run: echo 'A review from madhu-us or lalitha1020 was requested' 
+  printInputs:
      runs-on: ubuntu-latest
      steps:
      - run: |

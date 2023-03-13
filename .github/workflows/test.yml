@@ -1,0 +1,12 @@
+name: merging request
+
+on:
+  push:
+  pull_request:
+    types: [review_requested]
+jobs:
+  specific_review_requested:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.requested_team.name == 'madhu-us','lalitha1020' }}
+    steps:
+      - run: echo 'A review from madhu-us or lalitha1020 was requested'

@@ -1,5 +1,7 @@
 on: 
   push:
+     paths: 
+       - 'my/testing/**'
   workflow_dispatch:
     inputs:
       logLevel:

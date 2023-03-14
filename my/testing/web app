@@ -27,13 +27,13 @@
     "url": {
       "type": "string",
       "examples": [
-        "https://api.github.com/repos/github/hello-world/environments/staging"
+        "https://api.github.com/repos/github/testing/environments/staging"
       ]
     },
     "html_url": {
       "type": "string",
       "examples": [
-        "https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging"
+        "https://github.com/github/testing/deployments/activity_log?environments_filter=staging"
       ]
     },
     "created_at": {

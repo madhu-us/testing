@@ -1,6 +1,7 @@
 name: Testing multiple environment 
 
 on:
+  push:
   workflow_dispatch:
     inputs:
       Deploy-to:

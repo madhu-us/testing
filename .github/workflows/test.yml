@@ -7,6 +7,6 @@ on:
 jobs:
   specific_review_requested:
     runs-on: ubuntu-latest
-    if: ${{ github.event.requested_team.name == 'madhu-us''lalithag123' }}
+    if: ${{ github.event.requested_team.name == 'madhu-us' }}
     steps:
-      - run: echo 'A review from madhu-us or lalitha1020 was requested'
+      - run: echo 'A review from madhu-us was requested'

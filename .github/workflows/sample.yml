@@ -1,10 +1,11 @@
+name: Pull request testing
 on: 
   push:
      paths: 
        - 'my/testing/**'
   pull_request:
     types: [review_requested]
- #input: (AddPullRequestReviewInput!)
+
   workflow_dispatch:
     inputs:
       logLevel:
@@ -16,13 +17,12 @@ on:
         description: 'Test scenario tags'
         
 jobs:
- # input:( AddPullRequestReviewInput! )
-   # runs-on: ubuntu-latest
+ 
   specific_review_requested:
     runs-on: ubuntu-latest
-    if: ${{ github.event.requested_team.name == 'madhu-us''lalithag123' }}
+    if: ${{ github.event.requested_team.name == 'madhu-us' }}
     steps:
-      - run: echo 'A review from madhu-us or lalitha1020 was requested' 
+      - run: echo 'A review from madhu-us was requested' 
   printInputs:
      runs-on: ubuntu-latest
      steps:

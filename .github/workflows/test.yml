@@ -1,12 +1,12 @@
 name: merging request
 
 on:
- # push:
-  pull_request:
-    types: [review_requested]
+  pull_request_review:
+    types: [submitted]
+
 jobs:
-  specific_review_requested:
+  approved:
+    if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
-    if: ${{ github.event.requested_team.name == 'madhu-us' }}
     steps:
-      - run: echo 'A review from madhu-us was requested'
+      - run: echo "This PR was approved"

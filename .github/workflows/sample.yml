@@ -1,7 +1,7 @@
 on: 
-  push:
-     paths: 
-       - 'my/testing/**'
+  #push:
+     #paths: 
+       #- 'my/testing/**'
   pull_request:
     types: [review_requested]
  #input: (AddPullRequestReviewInput!)

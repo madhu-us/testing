@@ -1,33 +1,8 @@
+name: sample 
 on: 
   #push:
-     #paths: 
-       #- 'my/testing/**'
-  pull_request:
-    types: [review_requested]
- #input: (AddPullRequestReviewInput!)
   workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'     
-        required: true
-        default: 'warning'
-        #options:  PullRequestReview
-      tags:
-        description: 'Test scenario tags'
-        
-jobs:
- # input:( AddPullRequestReviewInput! )
-   # runs-on: ubuntu-latest
-  specific_review_requested:
-    runs-on: ubuntu-latest
-
-    if: ${{ github.event.requested_team.name == 'shanmukh215' }}
-    steps:
-      - run: echo 'A review from shanmukh215 was requested' 
-
-  printInputs:
-     runs-on: ubuntu-latest
-     steps:
-     - run: |
-        echo "Log level: ${{ github.event.inputs.logLevel }}"
-        echo "Tags: ${{ github.event.inputs.tags }}"  
+  
+job:
+  code review limits:
+  

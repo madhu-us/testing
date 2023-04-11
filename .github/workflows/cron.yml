@@ -1,4 +1,4 @@
-name: Testing multiple environment 
+name: Testing multiple & cron environment 
 
 on:
  # push:
@@ -10,7 +10,7 @@ on:
     #    type: environment
       #  description: Select the environment
       #  required: true  
-env:
+#env:
  # namehs: ${{ vars.KENT }}
  # uid: ${{ secrets.HS }}
  # web: ${{ secrets.HS_CM }}

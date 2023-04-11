@@ -14,7 +14,7 @@ env:
   namehs: ${{ vars.KENT }}
   uid: ${{ secrets.HS }}
   web: ${{ secrets.HS_CM }}
-  for: ${{ secreats.
+#  for: ${{ secreats.
 jobs:
   job:
     runs-on: ubuntu-latest

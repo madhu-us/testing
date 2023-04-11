@@ -1,0 +1,31 @@
+name: Testing multiple environment 
+
+on:
+ # push:
+  schedule:
+    - cron: '05 * * * *'
+  workflow_dispatch:
+   # inputs:
+    #  Deploy-to:
+    #    type: environment
+      #  description: Select the environment
+      #  required: true  
+env:
+ # namehs: ${{ vars.KENT }}
+ # uid: ${{ secrets.HS }}
+ # web: ${{ secrets.HS_CM }}
+ # for: ${{ secreats.
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    #environment: ${{ inputs.Deploy-to }}
+    steps:
+    - uses: actions/checkout@v2
+      name: printing env message
+    - run: |
+      #  echo "from ${{ inputs.Deploy-to }} environment"
+        echo $KENT
+        echo $HS
+      #  echo $HS_CM
+
+    

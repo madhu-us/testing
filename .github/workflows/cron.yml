@@ -21,11 +21,11 @@ jobs:
     #environment: ${{ inputs.Deploy-to }}
     steps:
     - uses: actions/checkout@v2
-      name: printing env message
-    - run: |
+     # name: printing env message
+   # - run: |
       #  echo "from ${{ inputs.Deploy-to }} environment"
-        echo $KENT
-        echo $HS
+      #  echo $KENT
+     #   echo $HS
       #  echo $HS_CM
 
     

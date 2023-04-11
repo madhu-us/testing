@@ -3,7 +3,7 @@ name: Testing multiple environment
 on:
  # push:
   schedule:
-    - cron: '05 * * * *'
+    - cron: '01 * * * *'
   workflow_dispatch:
     inputs:
       Deploy-to:

@@ -4,10 +4,11 @@ on:
  # push:
  # schedule:
    # - cron: '01 * * * *'
-  workflow_dispatch:
+  #workflow_dispatch:
+  workflow_call:
     inputs:
       Deploy-to:
-        type: environment
+        type: string
         description: Select the environment
         required: true  
 env:

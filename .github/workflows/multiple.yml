@@ -8,7 +8,7 @@ on:
  # workflow_call:
     inputs:
       Deploy-to:
-        type: string
+        type: environment
         description: Select the environment
         required: true  
 env:

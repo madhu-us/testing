@@ -14,6 +14,7 @@ jobs:
         env:
           TAG_NAME: nightly-tag-${{ steps.date.outputs.date }}
           RELEASE_NAME: nightly-release-${{ steps.date.outputs.date }}
+          with: COMMIT_TIME=$(git show -s --format=%ci dd28288f)
      # - name: Test with input
       #  uses: actions/hello-world-docker-action@master
       #  with:

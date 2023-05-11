@@ -1,6 +1,8 @@
-Name: Current Time
+name: Current Time
 on: push
-job: 
+jobs: 
+  build:
+  runs-on: ubuntu-latest
   steps:
   - name: Get current time
     uses: josStorer/get-current-time@v2

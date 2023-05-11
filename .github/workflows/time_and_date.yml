@@ -3,8 +3,9 @@ on: [push]
 jobs: 
   build: 
     runs-on: ubuntu-latest 
-    steps: 
-      - name: Set current date as env variable 
+    steps:
+      - uses: actions/checkout@v2
+        name: Set current date as env variable 
       - run: |
           echo "NOW=$(date +'D:%Y-%m-%d T:%H:%M:%S')" >> $GITHUB_ENV
           echo $NOW

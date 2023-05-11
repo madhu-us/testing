@@ -6,9 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Set current date as env variable 
-      - run: |
+      - run:
           echo "NOW=$(date +'D:%Y-%m-%d T:%H:%M:%S')" >> $GITHUB_ENV
-          echo $NOW
-      #- name: Echo current date 
-      #  run: echo $NOW # Gives "2022-12-11T01:42:
+         # echo $NOW
+      - name: Echo current date 
+        run: echo $NOW # Gives "2022-12-11T01:42:
         # echo "$NOW"

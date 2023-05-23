@@ -1,10 +1,6 @@
+name: sample 
 on: 
   #push:
-     #paths: 
-       #- 'my/testing/**'
-  pull_request:
-    types: [review_requested]
- #input: (AddPullRequestReviewInput!)
   workflow_dispatch:
 
     inputs:
@@ -32,4 +28,5 @@ jobs:
      - run: |
         echo "Log level: ${{ github.event.inputs.logLevel }}"
         echo "Tags: ${{ github.event.inputs.tags }}"  
+
 

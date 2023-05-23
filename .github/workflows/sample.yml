@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  codereviewlimits:
+  code_review_limits:
     runs-on: ubuntu-latest
     steps:
       - run: echo 'The label was bug'

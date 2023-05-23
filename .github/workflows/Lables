@@ -1,0 +1,12 @@
+name: lables
+on: 
+  pull_request:
+    types:
+      - labled
+jobs: 
+  build:
+  if: github.event.label.name == 'bug'
+  runs-on: ubuntu-latest
+  steps:
+    - run: echo 'The label was bug'
+   

@@ -2,14 +2,14 @@ name: Testing multiple & cron environment
 
 on:
  # push:
-  #schedule:
-   # - cron: "05 * * * *"
-  workflow_dispatch:
-    inputs:
-      Deploy-to:
-        type: environment
-        description: Select the environment
-        required: true  
+  schedule:
+    - cron: "05 * * * *"
+ # workflow_dispatch:
+  #  inputs:
+   #   Deploy-to:
+    #    type: environment
+     #   description: Select the environment
+      #  required: true  
 env:
   namehs: ${{ vars.KENT }}
   uid: ${{ secrets.HS }}

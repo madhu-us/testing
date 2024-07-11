@@ -1,0 +1,41 @@
+name: PR check
+on:
+  pull_request:
+    # The branches below must be a subset of the branches above
+    types: [opened, synchronize, reopened] 
+    branches:
+      - feature/1
+      - feature/2
+  workflow_dispatch:
+  
+jobs:
+  autoprcreate:
+      runs-on: ubuntu-latest
+      steps:
+      - name: PR Creation for Sonar Check
+        id: prnumber
+        run: |
+          response="$(gh api \
+          --method POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          repos/madhu-us/testing/pulls \
+          -f "title=Auto PR creation from uk_sprint46 to  uk_sprint44 for Sonar Check" -f "body=Auto PR merge from uk_sprint 46 for SonarCheck!" -f "head=testprmerge_autoscan" -f "base=uk_sprint44")"
+          echo "after create PR respose  "
+          echo $response | jq -r .message
+          echo "prnumber=$response | jq -r .number" >> $GITHUB_ENV
+          echo "generated pr number ${{ env.prnumber }} "
+          echo "after create PR respose print"
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_FOR_PRMERGE_SONAR }}
+  build:
+    needs: autoprcreate
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: refs/remotes/pull/${{ env.prnumber }}/merge"
+      - run: |
+         echo "prnumber"
+  

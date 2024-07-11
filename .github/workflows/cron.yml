@@ -1,11 +1,10 @@
-name: Testing multiple environment 
+name: Testing multiple & cron environment 
 
 on:
  # push:
- # schedule:
-   # - cron: '01 * * * *'
+  #schedule:
+   # - cron: "05 * * * *"
   workflow_dispatch:
- # workflow_call:
     inputs:
       Deploy-to:
         type: environment
@@ -14,11 +13,10 @@ on:
 env:
   namehs: ${{ vars.KENT }}
   uid: ${{ secrets.HS }}
- # web: ${{ secrets.HS_CM }}
- # for: ${{ secreats.
+  web: ${{ secrets.HS_CM }}
+#  for: ${{ secreats.
 jobs:
   job:
-    name: ${{ inputs.Deploy-to }}
     runs-on: ubuntu-latest
     environment: ${{ inputs.Deploy-to }}
     steps:
@@ -28,6 +26,6 @@ jobs:
         echo "from ${{ inputs.Deploy-to }} environment"
         echo $KENT
         echo $HS
-      #  echo $HS_CM
+        echo $HS_CM
 
     

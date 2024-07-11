@@ -23,7 +23,7 @@ jobs:
           echo "after create PR respose  "
           echo $response | jq -r .message
           echo "prnumber=$response | jq -r .number" >> $GITHUB_ENV
-          echo "generated pr number ${{ env.prnumber }} "
+          echo "generated pr number ${{ env.prnumber }} " >>$GITHUB_OUTPUT
           echo "after create PR respose print"
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_FOR_PRMERGE_SONAR }}
@@ -34,7 +34,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: refs/remotes/pull/${{ env.prnumber }}/merge"
+          ref: refs/remotes/pull/${{ github.jobs.output.prnumber }}/merge"
       - run: |
          echo "prnumber"
   

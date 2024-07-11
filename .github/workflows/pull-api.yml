@@ -1,0 +1,24 @@
+name: pull request review rest api
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  build:
+    if: github.event.review.state == 'APPROVED'
+    runs-on: ubuntu_latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+    
+      - name: review rest api
+        run: |
+          # GitHub CLI api
+          gh api \
+          --method POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          /repos/madhu-us/reuable/pulls/PULL_NUMBER/reviews/REVIEW_ID/events \
+          -f body='Here is the body for the review.' \
+          -f event='REQUEST_CHANGES' 
+

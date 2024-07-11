@@ -6,6 +6,9 @@ on:
     branches:
       - uk_sprint46
   workflow_dispatch:
+
+env:
+  prnumber: ${{github.event.pull_request.number}}
   
 jobs:
   autoprcreate:

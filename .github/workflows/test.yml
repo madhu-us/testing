@@ -4,8 +4,7 @@ on:
     # The branches below must be a subset of the branches above
     types: [opened, synchronize, reopened] 
     branches:
-      - feature/1
-      - feature/2
+      - uk_sprint46
   workflow_dispatch:
   
 jobs:
